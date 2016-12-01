@@ -1,0 +1,36 @@
+import { NavController, LoadingController, NavParams, ToastController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { UsuarioService } from '../../services/UsuarioService';
+import { UserData } from '../../services/user-data';
+import moment from 'moment';
+export declare class CadastrarEventoPage {
+    nav: NavController;
+    service: UsuarioService;
+    navParams: NavParams;
+    loadingController: LoadingController;
+    toastCtrl: ToastController;
+    userData: UserData;
+    eventoCad: any;
+    eventoResp: any;
+    eventoSel: any;
+    gender: any;
+    private submitted;
+    private idUsuarioLogado;
+    private usuario;
+    private retorno;
+    isGrupoEvento: Boolean;
+    private grupo;
+    local: Storage;
+    constructor(nav: NavController, service: UsuarioService, navParams: NavParams, loadingController: LoadingController, toastCtrl: ToastController, userData: UserData);
+    init(): void;
+    pesquisaComplete(): void;
+    funcaoPraAceitarSubmeterForm(form: any): void;
+    logError(err: any): void;
+    loginComplete(): void;
+    funcaoPraRedirecionarPraOutroLugar(): void;
+    cadastraEventoGrupo(form: any): void;
+    logEventoError(err: any): void;
+    salvarEventoComplete(): void;
+    configuraAlerta(codLembrete: any): moment.Moment;
+    configuraMsgAlerta(codLembrete: any): string;
+}

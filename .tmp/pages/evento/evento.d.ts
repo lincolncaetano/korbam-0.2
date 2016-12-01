@@ -1,0 +1,37 @@
+import { NavController, NavParams, ActionSheetController, AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import moment from 'moment';
+import { EventoService } from '../../services/EventoService';
+export declare class EventoPage {
+    nav: NavController;
+    navParams: NavParams;
+    service: EventoService;
+    actionSheetCtrl: ActionSheetController;
+    alertCtrl: AlertController;
+    local: Storage;
+    segEvento: any;
+    usuarioEvento: any;
+    usuEvenResp: any;
+    listaUsuarios: any;
+    isAdmin: any;
+    idUsuarioLogado: any;
+    retonorSalvarUsuarioEvento: any;
+    atualizarAgenda: boolean;
+    constructor(nav: NavController, navParams: NavParams, service: EventoService, actionSheetCtrl: ActionSheetController, alertCtrl: AlertController);
+    init(): void;
+    logError(err: any): void;
+    buscaUsuarioEventoComplete(): void;
+    respostaConvite(resposta: any): void;
+    salvarUsuarioEventoComplete(): void;
+    salvarLembrete(): void;
+    configuraAlerta(codLembrete: any): moment.Moment;
+    configuraMsgAlerta(codLembrete: any): string;
+    presentActionSheet(item: any): void;
+    adicionarUsuario(): void;
+    configurarEvento(): void;
+    deteleUsuarioEvento(idUsuario: any): void;
+    deleteUsuarioComplete(): void;
+    confirmaExclusao(): void;
+    detelaEvento(): void;
+    deletaEventoComplete(): void;
+}

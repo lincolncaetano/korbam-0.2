@@ -1,0 +1,31 @@
+import { NavController, ActionSheetController } from 'ionic-angular';
+import { App } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
+import { UsuarioService } from '../../services/UsuarioService';
+import { UserData } from '../../services/user-data';
+export declare class EditarPerfilPage {
+    nav: NavController;
+    actionSheetCtrl: ActionSheetController;
+    service: UsuarioService;
+    private app;
+    userData: UserData;
+    usuarioCad: any;
+    idUsuarioLogado: any;
+    token: any;
+    retorno: any;
+    usuario: any;
+    local: Storage;
+    namePage: any;
+    atualizarPerfil: boolean;
+    fotoAux: any;
+    constructor(nav: NavController, actionSheetCtrl: ActionSheetController, service: UsuarioService, app: App, userData: UserData);
+    logError(err: any): void;
+    pesquisaComplete(): void;
+    salvarUsuario(): void;
+    completeCad(): void;
+    presentActionSheet(): void;
+    selectFromGallery(): void;
+    openCamera(): void;
+    logout(): void;
+    logoutComplete(): void;
+}

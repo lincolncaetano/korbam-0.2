@@ -1,0 +1,199 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/img/logo.png" width="55%" class="img-logo"/>
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="calendario">
+      <ion-segment-button value="agenda">
+        Agenda
+      </ion-segment-button>
+      <ion-segment-button value="meusEventos">
+        Meus Eventos
+      </ion-segment-button>
+      <ion-segment-button value="convites">
+        Convites
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-branco">
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <div [ngSwitch]="calendario">
+    <div *ngSwitchCase="'agenda'">
+
+    
+
+
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <button ion-button clear (click)="cadastrarEvento()">
+                <ion-icon style="color: #081522; font-size: 40px; padding-left: 0px;" name="add-circle"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <div style="padding-left: 5px; padding-right: 5px;">
+
+            <div *ngFor="let item of listaEventos">
+
+              <div class="modeloItemAgenda1" (click)="abrirEvento(item)">
+
+                <div class="modeloItemAgenda-data">
+                  <h3>{{item.evento.momento.date()}}</h3>
+                  <h4>{{item.evento.momento.format('dddd')}}</h4>
+                </div>
+
+                <div class="modeloItemAgenda-nomeEvento">
+                  <p>{{item.evento.titulo}}</p>
+                </div>
+
+                <div class="modeloItemAgenda-horario">
+                  <p>{{item.evento.hrInicial}} às {{item.evento.hrFinal}}</p>
+                </div>
+
+              </div>
+
+            </div>
+      </div>
+
+    </div>
+
+    <div *ngSwitchCase="'meusEventos'">
+
+      <div *ngFor="let item of meusEventos">
+
+        <div class="modeloItemAgenda1" (click)="abrirEvento(item)">
+
+          <div class="modeloItemAgenda-data">
+            <h3>{{item.evento.momento.date()}}</h3>
+            <h4>{{item.evento.momento.format('dddd')}}</h4>
+          </div>
+
+          <div class="modeloItemAgenda-nomeEvento">
+            <p>{{item.evento.titulo}}</p>
+          </div>
+
+          <div class="modeloItemAgenda-horario">
+            <p>{{item.evento.hrInicial}} às {{item.evento.hrFinal}}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div *ngSwitchCase="'convites'">
+
+      <div *ngFor="let item of convitesEvento">
+
+        <div class="modeloItemAgenda1" (click)="abrirEvento(item)">
+
+          <div class="modeloItemAgenda-data">
+            <h3>{{item.evento.momento.date()}}</h3>
+            <h4>{{item.evento.momento.format('dddd')}}</h4>
+          </div>
+
+          <div class="modeloItemAgenda-nomeEvento">
+            <p>{{item.evento.titulo}}</p>
+          </div>
+
+          <div class="modeloItemAgenda-horario">
+            <p>{{item.evento.hrInicial}} às {{item.evento.hrFinal}}</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+<!--
+  <ion-list style="margin: 10px 0 32px 0;">
+    <ion-item *ngFor="let item of listaEventos">
+      <ion-label>{{ item.titulo }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item class="meusEventosAgenda">
+    <ion-label>meus eventos</ion-label>
+    <ion-checkbox [(ngModel)]="meusEventos"></ion-checkbox>
+  </ion-item>
+
+
+  <div class="ferramentasAgenda">
+
+    <a href="#" class="ferramentaAgenda" (click)="cadastrarEvento()">
+        <ion-icon light name="add-circle"></ion-icon>
+    </a>
+
+    <a href="#" class="ferramentaAgenda">
+        <ion-icon light name="ios-microphone"></ion-icon>
+    </a>
+
+    <a href="#" class="ferramentaAgenda">
+        <ion-icon light name="md-list"></ion-icon>
+    </a>
+
+  </div>
+
+  -->
+
+
+
+
+<!--
+    <div class="modeloItemAgenda2">
+
+      <div class="modeloItemAgenda-data">
+        <a href="#" class="ferramentaAgenda2">
+            <ion-icon light name="ios-microphone"></ion-icon>
+        </a>
+      </div>
+
+      <div class="modeloItemAgenda-nomeEvento">
+
+      </div>
+
+
+      <div class="modeloItemAgenda-player">
+        <a href="#" class="ferramentaAgenda3">
+            <ion-icon light name="ios-play"></ion-icon>
+        </a>
+      </div>
+
+      <div class="modeloItemAgenda-horarioGravacao">
+        <p>gravado às 03:15 pm</p>
+      </div>
+
+    </div>
+
+
+    <div class="modeloItemAgenda2">
+
+      <div class="modeloItemAgenda-data">
+        <a href="#" class="ferramentaAgenda2">
+            <ion-icon light name="md-list"></ion-icon>
+        </a>
+      </div>
+
+      <div class="modeloItemAgenda-texto">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis.</p>
+      </div>
+
+    </div> -->
+
+</ion-content>
