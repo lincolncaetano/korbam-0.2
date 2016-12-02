@@ -1,4 +1,4 @@
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, ModalController} from 'ionic-angular';
 
 import {Component, Input} from '@angular/core';
 import {Storage} from '@ionic/storage';
@@ -7,6 +7,10 @@ import moment from 'moment'
 
 import {CadastrarEventoPage} from '../cadastrar-evento/cadastrar-evento';
 import {EventoPage} from '../evento/evento';
+import {CheckModal} from '../check-modal/check-modal';
+import {CompartilharmentoModal} from '../compartilharmento-modal/compartilharmento-modal';
+import {HoraModal} from '../hora-modal/hora-modal';
+
 import {UsuarioService} from '../../services/UsuarioService';
 import {UserData} from '../../services/user-data';
 
@@ -54,7 +58,8 @@ export class AgendaPage {
     public nav: NavController,
     public service: UsuarioService,
     public navParams: NavParams,
-    public userData: UserData) {
+    public userData: UserData,
+    public modalCtrl: ModalController) {
 
      this.calendario = "agenda";
 
@@ -308,6 +313,27 @@ export class AgendaPage {
       console.log('Async operation has ended');
       refresher.complete();
     }, 2000);
+  }
+
+  openCheckModal() {
+
+   let modal = this.modalCtrl.create(CheckModal);
+   modal.present();
+
+  }
+
+  openCompartilhamentoModal() {
+
+   let modal = this.modalCtrl.create(CompartilharmentoModal);
+   modal.present();
+
+  }
+
+  openHoraModal() {
+
+   let modal = this.modalCtrl.create(HoraModal);
+   modal.present();
+
   }
 
 }

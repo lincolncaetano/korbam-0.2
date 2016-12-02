@@ -27,6 +27,10 @@ import {UsuarioGrupoPage} from '../pages/usuario-grupo/usuario-grupo';
 
 import {EditarPerfilPage} from '../pages/editar-perfil/editar-perfil';
 
+import {CheckModal} from '../pages/check-modal/check-modal';
+import {CompartilharmentoModal} from '../pages/compartilharmento-modal/compartilharmento-modal';
+import {HoraModal} from '../pages/hora-modal/hora-modal';
+
 import { UserData } from '../services/user-data';
 
 import {UsuarioService} from '../services/UsuarioService';
@@ -53,7 +57,10 @@ import {UsuarioService} from '../services/UsuarioService';
     UsuarioGrupoPage,
     EditarPerfilPage,
     PopoverPage,
-    PerfilUsuarioPage
+    PerfilUsuarioPage,
+    CheckModal,
+    CompartilharmentoModal,
+    HoraModal
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -80,7 +87,10 @@ import {UsuarioService} from '../services/UsuarioService';
     UsuarioGrupoPage,
     EditarPerfilPage,
     PopoverPage,
-    PerfilUsuarioPage
+    PerfilUsuarioPage,
+    CheckModal,
+    CompartilharmentoModal,
+    HoraModal
   ],
   providers: [UsuarioService, UserData, Storage]
 })

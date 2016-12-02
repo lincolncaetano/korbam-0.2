@@ -162,6 +162,49 @@
           </ion-row>
 
         </ion-grid>
+
+
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-input type="text" placeholder="Username"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col width-10>
+              <button ion-button icon-only>
+                <ion-icon name="home"></ion-icon>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+        <ion-list>
+
+          <ion-item-sliding>
+            <ion-item>
+              <h2>Slimer</h2>
+            </ion-item>
+
+            <ion-item-options side="right">
+              <button ion-button color="primary" (click)="openCheckModal()">
+                <ion-icon name="mail"></ion-icon>
+                Check
+              </button>
+              <button ion-button color="primary" (click)="openCompartilhamentoModal()">
+                <ion-icon name="text"></ion-icon>
+                Compart.
+              </button>
+              <button ion-button color="secondary" (click)="openHoraModal()">
+                <ion-icon name="call"></ion-icon>
+                Hora
+              </button>
+            </ion-item-options>
+          </ion-item-sliding>
+
+        </ion-list>
 <!--
         <ion-grid>
           <ion-row>
